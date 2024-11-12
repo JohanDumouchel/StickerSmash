@@ -9,6 +9,7 @@ export default function TabsLayout() {
       headerStyle: {
         backgroundColor: '#25292e',
       },
+      headerTitleAlign: 'center',
       headerShadowVisible: false,
       headerTintColor: '#fff',
       tabBarStyle: {

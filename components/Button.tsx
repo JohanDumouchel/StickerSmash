@@ -5,9 +5,10 @@ type ButtonProps = {
   label: string,
   theme?: 'primary',
   fontAwesome?: keyof typeof FontAwesome.glyphMap,
+  onPress?: () => void,
 }
 
-export default function Button({ label, theme, fontAwesome }: ButtonProps) {
+export default function Button({ label, theme, fontAwesome, onPress }: ButtonProps) {
 
   let stylesButtonLabel: StyleProp<TextStyle> = styles.buttonLabel;
   let stylesButtonContainer: StyleProp<TextStyle> = styles.buttonContainer;
@@ -19,7 +20,7 @@ export default function Button({ label, theme, fontAwesome }: ButtonProps) {
 
   return (
     <View style={stylesButtonContainer}>
-      <Pressable style={styles.button} onPress={() => {}}>
+      <Pressable style={styles.button} onPress={onPress}>
         {(fontAwesome) ?
           <FontAwesome name={fontAwesome} style={styles.buttonIcon} /> : <></>}
         <Text style={stylesButtonLabel}>{label}</Text>
